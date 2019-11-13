@@ -30,7 +30,7 @@ from hashlib import md5
 logger = logging.getLogger(__name__)
 logging.basicConfig()
 
-FILE_PATH = 'haiya.zip'
+FILE_PATH = 'submission.zip'
 
 SERVER_PORT = 8000
 
@@ -73,7 +73,7 @@ class API:
 
     def message_received(self, client, server, message):
         # Called when a client sends a message
-        print("Client id:(%d) \nmessage:%s" % (client['id'], message))
+        print("Client id:(%d) sent a message" % (client['id']))
         message_parts = message.split(maxsplit=1)
         command = message_parts.pop(0)
         if command == '!echo':
